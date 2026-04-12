@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.fabricio.collabboard.ui.auth.LoginFragment"
+        android:label="Login">
+        <action
+            android:id="@+id/action_login_to_feed"
+            app:destination="@id/feedFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/feedFragment"
+        android:name="com.fabricio.collabboard.ui.feed.FeedFragment"
+        android:label="Feed">
+        <action
+            android:id="@+id/action_feed_to_detail"
+            app:destination="@id/detailFragment"/>
+        <action
+            android:id="@+id/action_feed_to_profile"
+            app:destination="@id/profileFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.fabricio.collabboard.ui.detail.DetailFragment"
+        android:label="Project Detail">
+        <argument
+            android:name="projectId"
+            app:argType="string"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.fabricio.collabboard.ui.profile.ProfileFragment"
+        android:label="Profile">
+        <action
+            android:id="@+id/action_profile_to_login"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/feedFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
+
+</navigation>
