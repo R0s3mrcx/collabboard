@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "919583487146",
+    "project_id": "collabboard-50a00",
+    "storage_bucket": "collabboard-50a00.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:919583487146:android:d9a065da0a869c4be88cd3",
+        "android_client_info": {
+          "package_name": "com.fabricio.collabboard"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAXXLNwZmBO87Il70b0aXQbS_2bF99IGDA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
