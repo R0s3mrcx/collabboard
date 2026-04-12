@@ -52,5 +52,5 @@ students post projects and others can apply to join.
 
 ## Sprint Board
 
-[CollabBoard Trello Board](LINK-AQUI)
+[CollabBoard Trello Board](https://trello.com/b/0iLxE3VL)
 
