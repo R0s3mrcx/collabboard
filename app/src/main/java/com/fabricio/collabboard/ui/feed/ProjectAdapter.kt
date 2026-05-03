@@ -1,5 +1,6 @@
 package com.fabricio.collabboard.ui.feed
 
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -18,6 +19,7 @@ class ProjectAdapter(
         val tvDescription: TextView = view.findViewById(R.id.tvDescription)
         val tvTechStack: TextView = view.findViewById(R.id.tvTechStack)
         val tvOwner: TextView = view.findViewById(R.id.tvOwner)
+        val tvStatus: TextView = view.findViewById(R.id.tvStatus)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -32,9 +34,17 @@ class ProjectAdapter(
         holder.tvDescription.text = project.description
         holder.tvTechStack.text = "🛠 ${project.techStack}"
         holder.tvOwner.text = "by ${project.ownerName}"
+
+        if (project.status == "open") {
+            holder.tvStatus.text = "🟢 Open"
+            holder.tvStatus.setTextColor(Color.parseColor("#2E7D32"))
+        } else {
+            holder.tvStatus.text = "🔴 Closed"
+            holder.tvStatus.setTextColor(Color.parseColor("#C62828"))
+        }
+
         holder.itemView.setOnClickListener { onClick(project) }
     }
 
     override fun getItemCount() = projects.size
 }
-

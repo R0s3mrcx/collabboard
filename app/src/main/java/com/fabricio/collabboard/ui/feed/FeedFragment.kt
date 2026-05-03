@@ -2,11 +2,15 @@ package com.fabricio.collabboard.ui.feed
 
 import android.app.AlertDialog
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ProgressBar
+import android.widget.TextView
 import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
@@ -24,7 +28,8 @@ class FeedFragment : Fragment() {
 
     private lateinit var db: FirebaseFirestore
     private lateinit var auth: FirebaseAuth
-    private val projects = mutableListOf<Project>()
+    private val allProjects = mutableListOf<Project>()
+    private val filteredProjects = mutableListOf<Project>()
     private lateinit var adapter: ProjectAdapter
 
     override fun onCreateView(
@@ -40,7 +45,7 @@ class FeedFragment : Fragment() {
         auth = FirebaseAuth.getInstance()
 
         val rvProjects = view.findViewById<RecyclerView>(R.id.rvProjects)
-        adapter = ProjectAdapter(projects) { project ->
+        adapter = ProjectAdapter(filteredProjects) { project ->
             findNavController().navigate(
                 R.id.action_feed_to_detail,
                 bundleOf("projectId" to project.projectId)
@@ -57,21 +62,54 @@ class FeedFragment : Fragment() {
             showNewProjectDialog()
         }
 
-        loadProjects()
+        // Search/Filter (Extension 1)
+        view.findViewById<EditText>(R.id.etSearch).addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                filterProjects(s?.toString() ?: "")
+            }
+            override fun afterTextChanged(s: Editable?) {}
+        })
+
+        loadProjects(view)
     }
 
-    private fun loadProjects() {
+    private fun loadProjects(view: View) {
+        val progressBar = view.findViewById<ProgressBar>(R.id.progressFeed)
+        val tvEmpty = view.findViewById<TextView>(R.id.tvEmpty)
+        progressBar.visibility = View.VISIBLE
+
         db.collection("projects")
             .orderBy("createdAt", Query.Direction.DESCENDING)
             .addSnapshotListener { snapshot, _ ->
+                progressBar.visibility = View.GONE
                 if (snapshot != null) {
-                    projects.clear()
+                    allProjects.clear()
                     for (doc in snapshot.documents) {
-                        doc.toObject(Project::class.java)?.let { projects.add(it) }
+                        doc.toObject(Project::class.java)?.let { allProjects.add(it) }
                     }
-                    adapter.notifyDataSetChanged()
+                    val query = view.findViewById<EditText>(R.id.etSearch).text.toString()
+                    filterProjects(query)
+
+                    // Empty state (Extension 2)
+                    tvEmpty.visibility = if (allProjects.isEmpty()) View.VISIBLE else View.GONE
                 }
             }
+    }
+
+    private fun filterProjects(query: String) {
+        filteredProjects.clear()
+        if (query.isBlank()) {
+            filteredProjects.addAll(allProjects)
+        } else {
+            val q = query.lowercase()
+            filteredProjects.addAll(allProjects.filter {
+                it.title.lowercase().contains(q) ||
+                it.techStack.lowercase().contains(q) ||
+                it.ownerName.lowercase().contains(q)
+            })
+        }
+        adapter.notifyDataSetChanged()
     }
 
     private fun showNewProjectDialog() {
@@ -94,7 +132,6 @@ class FeedFragment : Fragment() {
                         "Title must be at least 3 characters", Toast.LENGTH_SHORT).show()
                     return@setPositiveButton
                 }
-
                 if (!Validators.isValidTechStack(techStack)) {
                     Toast.makeText(requireContext(),
                         "Please enter the tech stack needed", Toast.LENGTH_SHORT).show()
@@ -123,8 +160,7 @@ class FeedFragment : Fragment() {
                 )
                 db.collection("projects").document(projectId).set(project)
                     .addOnSuccessListener {
-                        Toast.makeText(requireContext(),
-                            "Project posted! 🚀", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(requireContext(), "Project posted! 🚀", Toast.LENGTH_SHORT).show()
                     }
             }
     }
