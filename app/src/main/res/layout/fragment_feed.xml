@@ -61,6 +61,40 @@
 
     </LinearLayout>
 
+    <!-- Search bar (Extension 1) -->
+    <EditText
+        android:id="@+id/etSearch"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="8dp"
+        android:hint="🔍  Search by title, tech stack or author..."
+        android:textSize="14sp"
+        android:background="@color/card_bg"
+        android:paddingHorizontal="16dp"
+        android:inputType="text"
+        android:imeOptions="actionSearch"
+        android:singleLine="true"/>
+
+    <ProgressBar
+        android:id="@+id/progressFeed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone"/>
+
+    <!-- Empty state (Extension 2) -->
+    <TextView
+        android:id="@+id/tvEmpty"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="No projects yet.\nBe the first to post one! 🚀"
+        android:textSize="16sp"
+        android:textColor="@color/text_secondary"
+        android:gravity="center"
+        android:padding="48dp"
+        android:visibility="gone"/>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvProjects"
         android:layout_width="match_parent"

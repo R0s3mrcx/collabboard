@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/surface">
@@ -10,6 +11,13 @@
         android:orientation="vertical"
         android:padding="24dp">
 
+        <ProgressBar
+            android:id="@+id/progressDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone"/>
+
         <TextView
             android:id="@+id/tvDetailTitle"
             android:layout_width="match_parent"
@@ -17,7 +25,15 @@
             android:textSize="26sp"
             android:textStyle="bold"
             android:textColor="@color/text_primary"
-            android:layout_marginBottom="24dp"/>
+            android:layout_marginBottom="8dp"/>
+
+        <TextView
+            android:id="@+id/tvDetailStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="20dp"/>
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
@@ -25,8 +41,7 @@
             android:layout_marginBottom="16dp"
             app:cardCornerRadius="16dp"
             app:cardElevation="0dp"
-            app:cardBackgroundColor="@color/card_bg"
-            xmlns:app="http://schemas.android.com/apk/res-auto">
+            app:cardBackgroundColor="@color/card_bg">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -51,7 +66,6 @@
                     android:textColor="@color/text_primary"/>
 
             </LinearLayout>
-
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
@@ -60,8 +74,7 @@
             android:layout_marginBottom="16dp"
             app:cardCornerRadius="16dp"
             app:cardElevation="0dp"
-            app:cardBackgroundColor="@color/card_bg"
-            xmlns:app="http://schemas.android.com/apk/res-auto">
+            app:cardBackgroundColor="@color/card_bg">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -87,7 +100,6 @@
                     android:textStyle="bold"/>
 
             </LinearLayout>
-
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
@@ -96,8 +108,7 @@
             android:layout_marginBottom="32dp"
             app:cardCornerRadius="16dp"
             app:cardElevation="0dp"
-            app:cardBackgroundColor="@color/card_bg"
-            xmlns:app="http://schemas.android.com/apk/res-auto">
+            app:cardBackgroundColor="@color/card_bg">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -122,7 +133,6 @@
                     android:textColor="@color/text_primary"/>
 
             </LinearLayout>
-
         </androidx.cardview.widget.CardView>
 
         <Button
@@ -134,8 +144,42 @@
             android:textStyle="bold"
             android:textColor="@color/white"
             android:backgroundTint="@color/primary"
-            android:stateListAnimator="@null"/>
+            android:stateListAnimator="@null"
+            android:layout_marginBottom="12dp"/>
+
+        <Button
+            android:id="@+id/btnEdit"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:text="✏️ Edit Project"
+            android:textSize="15sp"
+            android:backgroundTint="@color/primary"
+            android:textColor="@color/white"
+            android:stateListAnimator="@null"
+            android:visibility="gone"
+            android:layout_marginBottom="8dp"/>
+
+        <Button
+            android:id="@+id/btnToggleStatus"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:text="Close Project"
+            android:textSize="15sp"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:stateListAnimator="@null"
+            android:visibility="gone"
+            android:layout_marginBottom="8dp"/>
+
+        <Button
+            android:id="@+id/btnDelete"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:text="🗑️ Delete Project"
+            android:textSize="15sp"
+            android:backgroundTint="@color/danger"
+            android:textColor="@color/white"
+            android:stateListAnimator="@null"
+            android:visibility="gone"/>
 
     </LinearLayout>
-
 </ScrollView>
