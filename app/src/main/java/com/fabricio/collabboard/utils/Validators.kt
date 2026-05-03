@@ -18,4 +18,8 @@ object Validators {
     fun isValidTechStack(techStack: String): Boolean {
         return techStack.isNotBlank()
     }
+
+    fun isValidDescription(description: String): Boolean {
+        return description.isNotBlank()
+    }
 }
