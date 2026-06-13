@@ -1,0 +1,114 @@
+[
+    {
+        "merged": "com.fabricio.collabboard.app-debug-56:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.fabricio.collabboard.app-main-58:/mipmap-xxxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.fabricio.collabboard.app-debug-56:/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "com.fabricio.collabboard.app-main-58:/mipmap-hdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.fabricio.collabboard.app-debug-56:/layout_fragment_login.xml.flat",
+        "source": "com.fabricio.collabboard.app-main-58:/layout/fragment_login.xml"
+    },
+    {
+        "merged": "com.fabricio.collabboard.app-debug-56:/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "com.fabricio.collabboard.app-main-58:/mipmap-xhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.fabricio.collabboard.app-debug-56:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.fabricio.collabboard.app-main-58:/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "com.fabricio.collabboard.app-debug-56:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "com.fabricio.collabboard.app-main-58:/mipmap-mdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.fabricio.collabboard.app-debug-56:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "com.fabricio.collabboard.app-main-58:/mipmap-xxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.fabricio.collabboard.app-debug-56:/layout_item_request.xml.flat",
+        "source": "com.fabricio.collabboard.app-main-58:/layout/item_request.xml"
+    },
+    {
+        "merged": "com.fabricio.collabboard.app-debug-56:/layout_fragment_detail.xml.flat",
+        "source": "com.fabricio.collabboard.app-main-58:/layout/fragment_detail.xml"
+    },
+    {
+        "merged": "com.fabricio.collabboard.app-debug-56:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "com.fabricio.collabboard.app-main-58:/mipmap-xhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.fabricio.collabboard.app-debug-56:/layout_fragment_requests.xml.flat",
+        "source": "com.fabricio.collabboard.app-main-58:/layout/fragment_requests.xml"
+    },
+    {
+        "merged": "com.fabricio.collabboard.app-debug-56:/navigation_nav_graph.xml.flat",
+        "source": "com.fabricio.collabboard.app-main-58:/navigation/nav_graph.xml"
+    },
+    {
+        "merged": "com.fabricio.collabboard.app-debug-56:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.fabricio.collabboard.app-main-58:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "com.fabricio.collabboard.app-debug-56:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.fabricio.collabboard.app-main-58:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.fabricio.collabboard.app-debug-56:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.fabricio.collabboard.app-main-58:/mipmap-xxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.fabricio.collabboard.app-debug-56:/layout_item_project.xml.flat",
+        "source": "com.fabricio.collabboard.app-main-58:/layout/item_project.xml"
+    },
+    {
+        "merged": "com.fabricio.collabboard.app-debug-56:/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "com.fabricio.collabboard.app-main-58:/mipmap-xxxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.fabricio.collabboard.app-debug-56:/layout_fragment_feed.xml.flat",
+        "source": "com.fabricio.collabboard.app-main-58:/layout/fragment_feed.xml"
+    },
+    {
+        "merged": "com.fabricio.collabboard.app-debug-56:/layout_item_notification.xml.flat",
+        "source": "com.fabricio.collabboard.app-main-58:/layout/item_notification.xml"
+    },
+    {
+        "merged": "com.fabricio.collabboard.app-debug-56:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "com.fabricio.collabboard.app-main-58:/drawable/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "com.fabricio.collabboard.app-debug-56:/layout_dialog_new_project.xml.flat",
+        "source": "com.fabricio.collabboard.app-main-58:/layout/dialog_new_project.xml"
+    },
+    {
+        "merged": "com.fabricio.collabboard.app-debug-56:/xml_data_extraction_rules.xml.flat",
+        "source": "com.fabricio.collabboard.app-main-58:/xml/data_extraction_rules.xml"
+    },
+    {
+        "merged": "com.fabricio.collabboard.app-debug-56:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "com.fabricio.collabboard.app-main-58:/mipmap-mdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.fabricio.collabboard.app-debug-56:/layout_fragment_notifications.xml.flat",
+        "source": "com.fabricio.collabboard.app-main-58:/layout/fragment_notifications.xml"
+    },
+    {
+        "merged": "com.fabricio.collabboard.app-debug-56:/layout_activity_main.xml.flat",
+        "source": "com.fabricio.collabboard.app-main-58:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.fabricio.collabboard.app-debug-56:/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "com.fabricio.collabboard.app-main-58:/mipmap-hdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.fabricio.collabboard.app-debug-56:/layout_fragment_profile.xml.flat",
+        "source": "com.fabricio.collabboard.app-main-58:/layout/fragment_profile.xml"
+    },
+    {
+        "merged": "com.fabricio.collabboard.app-debug-56:/xml_backup_rules.xml.flat",
+        "source": "com.fabricio.collabboard.app-main-58:/xml/backup_rules.xml"
+    }
+]
